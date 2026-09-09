@@ -383,6 +383,8 @@ dd {
     color:inherit
   }
 }
-html {
-  font-size: 18px; /* 기본값은 보통 16px입니다. 18px~20px 등 원하는 크기로 숫자를 변경해 보세요. */
-}
+<style>
+  html {
+    font-size: 18px;
+  }
+</style>
