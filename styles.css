@@ -185,6 +185,9 @@ figcaption {
 .result figure>a {
   display:block
 }
+.result figcaption {
+  max-width:none
+}
 .interpretation {
   display:grid;
   grid-template-columns:1fr 1fr;
