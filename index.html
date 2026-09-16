@@ -35,6 +35,11 @@
       <p>In the Matsuura Laboratory, I analyzed the SPLICES catalog of background sources selected for infrared absorption spectroscopy of interstellar ice. The 3.1 GB FITS catalog contains approximately 9 million sources.</p>
       <p>Using Python and Astropy’s memory-mapped FITS access, I randomly sampled 10,000 sources and plotted their right ascension and declination to examine the catalog’s spatial distribution.</p>
       <p class="method">Python · Astropy · NumPy · Pandas · Matplotlib</p>
+      <p class="note"><strong>Data source:</strong> I downloaded the FITS catalog from the <a href="https://irsa.ipac.caltech.edu/data/SPHEREx/SPLICES/">NASA/IPAC Infrared Science Archive (IRSA) SPLICES archive</a>. The code below uses <code>20241107_SPLICESv8.6.fits</code>. Dataset DOI: <a href="https://doi.org/10.26131/IRSA554">10.26131/IRSA554</a>; catalog reference: <a href="https://iopscience.iop.org/article/10.3847/1538-4357/acc86b">Ashby et al. (2023)</a>.</p>
+      <figure class="code-figure">
+        <a href="assets/splices-code.png" aria-label="Open the SPLICES Python code image at full resolution"><img src="assets/splices-code.png" width="1558" height="1677" loading="lazy" alt="Python code reads the SPLICES FITS catalog with Astropy, selects 10,000 distinct random indices with NumPy, and plots right ascension against declination with Matplotlib."></a>
+        <figcaption>Python workflow for reading the SPLICES FITS catalog and plotting 10,000 randomly selected sources without replacement. This is catalog-coordinate visualization, not spectral fitting or a measurement of ice abundance. <a href="assets/splices-code.png">View full-resolution code</a>.</figcaption>
+      </figure>
     </div>
   </section>
   <section id="result" class="section result" aria-labelledby="result-title">
@@ -80,7 +85,7 @@
 <p>My long-term motivation is to support space-resource exploration by developing methods that assess composition and its uncertainty, helping prioritize promising targets for further investigation.</p>
 <p>I propose a multimodal scientific machine-learning framework to study planetary surface composition using heterogeneous infrared and X-ray observations. The central question is whether complementary measurements can support compositional inference when one sensing modality is noisy or unavailable.</p>
 <p>A proposed Moon → Bennu → Ryugu progression would explore complementary, noisy, and missing observations, with comparisons to returned-sample measurements where appropriate. Data availability, spatial correspondence, and transfer between planetary bodies would need to be established before validation.</p>
-<p class="note">The diagrams below outline proposed studies. No trained model, validated composition map, or completed proof of concept is presented. Compositional screening would inform further exploration; it would not establish resource recoverability or economic feasibility.</p>
+<p class="note">The diagrams and AI-generated concept illustrations below outline proposed studies. Labels such as “robustness verified” and “PoC completed” in the original illustrations describe intended outcomes, not completed results. No trained model, validated composition map, or completed proof of concept is presented. Compositional screening would inform further exploration; it would not establish resource recoverability or economic feasibility.</p>
       <article class="phase">
 <p class="phase-number">OASIS / Phase 1 · Proposed</p>
 <h3>Moon — Establish a baseline</h3>
@@ -93,6 +98,11 @@
 <li><strong>Planned evaluation</strong><span>Compare with relevant sample measurements</span></li>
 </ol>
 <p class="concept-note">Planned robustness evaluation: mask X-ray inputs and assess sensitivity to missing information.</p>
+</figure>
+<figure class="concept-art">
+<p class="status">Concept illustration · Proposed work</p>
+<a href="assets/oasis-moon.jpg" aria-label="Open the Moon research concept illustration"><img src="assets/oasis-moon.jpg" width="1024" height="545" loading="lazy" alt="AI-generated illustration of the proposed Moon phase; visual maps and completion labels are conceptual, not achieved research results."></a>
+<figcaption>AI-generated research concept, not a completed experiment. “Robustness verified” illustrates the intended evaluation goal; robustness has not yet been tested. <a href="assets/oasis-moon.jpg">View full-resolution illustration</a>.</figcaption>
 </figure>
 </article>
       <article class="phase">
@@ -108,6 +118,11 @@
 </ol>
 <p class="concept-note">Data availability and suitability must be established before a multimodal experiment.</p>
 </figure>
+<figure class="concept-art">
+<p class="status">Concept illustration · Proposed work</p>
+<a href="assets/oasis-bennu.jpg" aria-label="Open the Bennu research concept illustration"><img src="assets/oasis-bennu.jpg" width="1024" height="544" loading="lazy" alt="AI-generated illustration of the proposed Bennu phase; visual maps and completion labels are conceptual, not achieved research results."></a>
+<figcaption>AI-generated research concept. The colored resource map is illustrative, not a measured or predicted result. Any use of X-ray measurements depends on suitable data being available. <a href="assets/oasis-bennu.jpg">View full-resolution illustration</a>.</figcaption>
+</figure>
 </article>
       <article class="phase">
 <p class="phase-number">OASIS / Phase 3 · Proposed</p>
@@ -121,6 +136,11 @@
 <li><strong>Planned evaluation</strong><span>Compare with relevant returned-sample analyses</span></li>
 </ol>
 <p class="concept-note">Proposed proof-of-concept study: account for differences between bodies and limited sample coverage.</p>
+</figure>
+<figure class="concept-art">
+<p class="status">Concept illustration · Proposed work</p>
+<a href="assets/oasis-ryugu.jpg" aria-label="Open the Ryugu research concept illustration"><img src="assets/oasis-ryugu.jpg" width="1024" height="279" loading="lazy" alt="AI-generated illustration of the proposed Ryugu phase; visual maps and completion labels are conceptual, not achieved research results."></a>
+<figcaption>AI-generated research concept, not a completed validation. “PoC completed” represents a proposed goal; no proof of concept has been completed. Returned samples would provide comparison constraints, subject to spatial correspondence and representativeness. <a href="assets/oasis-ryugu.jpg">View full-resolution illustration</a>.</figcaption>
 </figure>
 </article>
     </div>
