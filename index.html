@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Inho Yoo, undergraduate researcher at Kwansei Gakuin University. Cosmic ice mapping, planetary infrared spectroscopy, and proposed multimodal scientific machine learning.">
+  <meta name="description" content="Inho Yoo, Physics and Astronomy undergraduate at Kwansei Gakuin University. Planetary remote sensing, planned lunar composition research, and scientific machine learning for future space-resource exploration.">
   <title>Inho Yoo | Planetary Science &amp; Spectroscopy</title>
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -19,36 +19,36 @@
       <p class="eyebrow">Kwansei Gakuin University · Matsuura Laboratory</p>
       <h1 id="name">Inho Yoo</h1>
       <p class="identity">Planetary spectroscopy &amp;<br>scientific machine learning</p>
-      <p class="intro">I am an undergraduate researcher studying cosmic ice target distributions, with interests in asteroid surface composition and inference from infrared and X-ray observations.</p>
-      <p class="intro">I plan to pursue doctoral research in planetary science in the United States, beginning in Fall 2027.</p>
+      <p class="intro">I am a Physics and Astronomy undergraduate at Kwansei Gakuin University interested in planetary composition, remote sensing, and scientific machine learning. My long-term goal is to develop computational tools that combine infrared and X-ray observations to identify promising targets for future space-resource exploration.</p>
+      <p class="intro">I am preparing to apply for Fall 2027 Ph.D. admission in the United States.</p>
       <div class="links"><a href="#research">Research</a><a href="assets/inho-yoo-cv.pdf">Curriculum vitae (PDF)</a><a href="mailto:yoo.inho@kwansei.ac.jp">Email</a>
 </div>
     </div>
     <img class="portrait" src="assets/inho-yoo.jpg" width="822" height="1000" alt="Portrait of Inho Yoo">
   </section>
   <section id="research" class="section" aria-labelledby="research-title">
-    <div class="section-label">01 / Current research</div>
+    <div class="section-label">01 / Research experience</div>
     <div class="section-body">
-      <p class="status">Ongoing project · Completed catalog analysis</p>
-      <h2 id="research-title">Mapping targets for cosmic ice exploration</h2>
+      <p class="status">Completed introductory catalog analysis</p>
+      <h2 id="research-title">Spatial distribution of SPLICES target candidates</h2>
       <p class="lead">A spatial view of the SPHEREx / SPLICES target catalog.</p>
       <p>In the Matsuura Laboratory, I analyzed the SPLICES catalog of background sources selected for infrared absorption spectroscopy of interstellar ice. The 3.1 GB FITS catalog contains approximately 9 million sources.</p>
-      <p>I built a memory-efficient Python pipeline using Astropy’s memory-mapped FITS access, randomly sampled 10,000 sources to examine the large-scale distribution, and plotted their right ascension and declination.</p>
+      <p>Using Python and Astropy’s memory-mapped FITS access, I randomly sampled 10,000 sources and plotted their right ascension and declination to examine the catalog’s spatial distribution.</p>
       <p class="method">Python · Astropy · NumPy · Pandas · Matplotlib</p>
     </div>
   </section>
   <section id="result" class="section result" aria-labelledby="result-title">
     <div class="result-heading">
-<div class="section-label">02 / Research result</div>
+<div class="section-label">02 / Catalog analysis &amp; visualization</div>
 <div>
-<p class="status">Completed spatial mapping</p>
+<p class="status">Completed coordinate visualization</p>
 <h2 id="result-title">The Galactic plane in equatorial coordinates</h2>
-<p class="lead">A random sample reveals a coherent, nonuniform distribution across the sky.</p>
+<p class="lead">A visualization of 10,000 randomly sampled catalog sources.</p>
 </div>
 </div>
     <figure>
       <a href="assets/cosmic-ice-plot.svg" aria-label="Open the original spatial-distribution figure at full resolution"><img src="assets/cosmic-ice-plot.svg" width="890" height="480" alt="Original research plot showing 10,000 SPLICES targets plotted by right ascension and declination. A curved band descends to about minus 60 degrees declination, with a dense concentration near right ascension 270 degrees."></a>
-      <figcaption>Figure 1. Original spatial-distribution result from my cosmic ice analysis presentation: 10,000 randomly sampled SPLICES sources in equatorial coordinates. The graph is cropped from the original slide; plotted points, axes, and English labels are unchanged. <a href="assets/cosmic-ice-plot.svg">View full-resolution figure</a>.</figcaption>
+      <figcaption>Figure 1. Spatial-distribution plot from my introductory catalog-analysis presentation: 10,000 randomly sampled SPLICES sources in equatorial coordinates. The graph is cropped from the original slide; plotted points, axes, and English labels are unchanged. <a href="assets/cosmic-ice-plot.svg">View full-resolution figure</a>.</figcaption>
     </figure>
     <div class="interpretation">
 <div>
@@ -56,8 +56,8 @@
 <p>The curved, S-shaped concentration traces the Galactic plane in right ascension and declination. Its shape reflects the inclination of the Galactic plane relative to the celestial equator.</p>
 </div>
 <div>
-<h3>Toward the Galactic center</h3>
-<p>The enhanced concentration toward Sagittarius is consistent with the Galactic-center direction and SPLICES selection of molecular-cloud-rich sightlines. The figure shows the distribution of selected background targets; it does not directly measure ice abundance.</p>
+<h3>Scope of the analysis</h3>
+<p>The map illustrates the spatial distribution of the sampled catalog targets in equatorial coordinates. It provides an introductory view of the catalog’s sky coverage rather than a measurement of ice abundance or composition.</p>
 </div>
 </div>
   </section>
@@ -65,10 +65,10 @@
     <div class="section-label">03 / Next research step</div>
     <div class="section-body">
 <p class="status">Planned work</p>
-<h2 id="next-title">From spatial mapping to Bennu spectroscopy</h2>
-<p class="lead">Move from where the targets are to what their spectra can tell us.</p>
-<p>My next step is to develop and validate Python spectral-fitting routines using public OSIRIS-REx infrared observations of Bennu. The aim is to characterize absorption features associated with water and hydrated minerals, and assess the reliability of their fitted depths and shapes.</p>
-<p>This work would build experience in spectral analysis for subsequent SPHEREx studies. The catalog map above is complete; Bennu spectral fitting and compositional interpretation remain planned work.</p>
+<h2 id="next-title">Planned senior thesis — Lunar remote sensing</h2>
+<p class="lead">Exploring complementary observations of lunar surface composition.</p>
+<p>For my planned senior thesis, I aim to investigate lunar surface composition using infrared and X-ray remote-sensing data. I am interested in exploring how these complementary observations, together with laboratory measurements of lunar samples, could inform computational and machine-learning approaches to compositional inference.</p>
+<p>This project has not yet begun. The initial stage will focus on reviewing suitable datasets, their spatial correspondence, and the feasibility of combining them.</p>
 </div>
   </section>
   <section id="oasis" class="section" aria-labelledby="oasis-title">
@@ -77,31 +77,50 @@
 <p class="status">Research proposal · Not yet implemented or validated</p>
 <h2 id="oasis-title">OASIS</h2>
 <p class="lead">Optimal Asteroid Scoring via Infrared and X-ray Spectroscopy</p>
+<p>My long-term motivation is to support space-resource exploration by developing methods that assess composition and its uncertainty, helping prioritize promising targets for further investigation.</p>
 <p>I propose a multimodal scientific machine-learning framework to study planetary surface composition using heterogeneous infrared and X-ray observations. The central question is whether complementary measurements can support compositional inference when one sensing modality is noisy or unavailable.</p>
-<p>A Moon → Bennu → Ryugu progression would examine complete, noisy, and missing modalities, with proposed comparisons to returned-sample measurements. Data availability, spatial correspondence, and transfer between planetary bodies would need to be established before validation.</p>
-<p class="note">The original AI-generated concept images below illustrate intended experiments and outcomes. Labels such as “robustness verified” and “PoC completed” describe aspirations in the illustrations, not achieved results.</p>
+<p>A proposed Moon → Bennu → Ryugu progression would explore complementary, noisy, and missing observations, with comparisons to returned-sample measurements where appropriate. Data availability, spatial correspondence, and transfer between planetary bodies would need to be established before validation.</p>
+<p class="note">The diagrams below outline proposed studies. No trained model, validated composition map, or completed proof of concept is presented. Compositional screening would inform further exploration; it would not establish resource recoverability or economic feasibility.</p>
       <article class="phase">
 <p class="phase-number">OASIS / Phase 1 · Proposed</p>
 <h3>Moon — Establish a baseline</h3>
 <p>Explore a baseline model combining lunar infrared observations, X-ray measurements, and sample composition. Deliberately masking X-ray inputs would test sensitivity to missing information and define a screening procedure for later experiments.</p>
-<figure><a href="assets/oasis-moon.jpg" aria-label="Open original OASIS concept image at full resolution"><img src="assets/oasis-moon.jpg" width="1024" height="545" loading="lazy" alt="Original AI concept for the proposed lunar phase: infrared, X-ray, and sample composition inputs feed a model through a filter."></a>
-<figcaption>Phase 1 concept. Robustness testing is a proposed objective; no verified model is claimed. <a href="assets/oasis-moon.jpg">View original concept</a>.</figcaption>
+<figure class="concept-diagram" aria-labelledby="concept-moon">
+<figcaption id="concept-moon">Proposed lunar baseline</figcaption>
+<ol class="concept-steps">
+<li><strong>Candidate inputs</strong><span>Infrared and X-ray observations</span></li>
+<li><strong>Planned analysis</strong><span>Assess alignment and model feasibility</span></li>
+<li><strong>Planned evaluation</strong><span>Compare with relevant sample measurements</span></li>
+</ol>
+<p class="concept-note">Planned robustness evaluation: mask X-ray inputs and assess sensitivity to missing information.</p>
 </figure>
 </article>
       <article class="phase">
 <p class="phase-number">OASIS / Phase 2 · Proposed</p>
 <h3>Bennu — Study multimodal learning under noise</h3>
-<p>Investigate a model using infrared observations as the primary input and available X-ray observations as an auxiliary modality. The proposed experiment would evaluate sensitivity to solar-activity-related noise and investigate inference of hydrated minerals and organic material.</p>
-<figure><a href="assets/oasis-bennu.jpg" aria-label="Open original OASIS concept image at full resolution"><img src="assets/oasis-bennu.jpg" width="1024" height="544" loading="lazy" alt="Original AI concept for the proposed Bennu phase, combining infrared and noisy X-ray signals in a multimodal model to estimate a surface composition map."></a>
-<figcaption>Phase 2 concept. The colored surface map is illustrative, not a measured or predicted research result. <a href="assets/oasis-bennu.jpg">View original concept</a>.</figcaption>
+<p>Investigate infrared observations as the primary input, with X-ray measurements considered only if suitable data are available. An initial feasibility study would assess data quality and spatial correspondence before testing whether complementary measurements improve compositional inference.</p>
+<figure class="concept-diagram" aria-labelledby="concept-bennu">
+<figcaption id="concept-bennu">Proposed Bennu feasibility study</figcaption>
+<ol class="concept-steps">
+<li><strong>Candidate inputs</strong><span>Infrared observations; X-ray data if suitable</span></li>
+<li><strong>Planned analysis</strong><span>Assess data quality and spatial correspondence</span></li>
+<li><strong>Planned evaluation</strong><span>Test compositional inference under noise</span></li>
+</ol>
+<p class="concept-note">Data availability and suitability must be established before a multimodal experiment.</p>
 </figure>
 </article>
       <article class="phase">
 <p class="phase-number">OASIS / Phase 3 · Proposed</p>
 <h3>Ryugu — Evaluate transfer with a missing modality</h3>
 <p>Test whether a trained model can generalize to Ryugu using infrared observations without an X-ray input. Proposed comparisons with Hayabusa2 sample analyses would assess compositional consistency, accounting for the limited spatial correspondence between remote observations and returned samples.</p>
-<figure><a href="assets/oasis-ryugu.jpg" aria-label="Open original OASIS concept image at full resolution"><img src="assets/oasis-ryugu.jpg" width="1024" height="279" loading="lazy" alt="Original AI concept for proposed Ryugu validation using infrared-only inputs and comparison with Hayabusa2 sample analysis. The image's completion badge represents an intended outcome only."></a>
-<figcaption>Phase 3 concept. Validation and proof of concept remain proposed, despite the completion wording embedded in the original image. <a href="assets/oasis-ryugu.jpg">View original concept</a>.</figcaption>
+<figure class="concept-diagram" aria-labelledby="concept-ryugu">
+<figcaption id="concept-ryugu">Proposed transfer study</figcaption>
+<ol class="concept-steps">
+<li><strong>Candidate inputs</strong><span>Infrared observations of Ryugu</span></li>
+<li><strong>Planned analysis</strong><span>Explore transfer without X-ray inputs</span></li>
+<li><strong>Planned evaluation</strong><span>Compare with relevant returned-sample analyses</span></li>
+</ol>
+<p class="concept-note">Proposed proof-of-concept study: account for differences between bodies and limited sample coverage.</p>
 </figure>
 </article>
     </div>
@@ -124,11 +143,15 @@
 </div>
 <div>
 <dt>Data analysis</dt>
-<dd>Large-scale FITS processing, memory mapping, statistical sampling, spatial mapping, coordinate transformations</dd>
+<dd>FITS catalog handling, memory-mapped data access, random sampling, coordinate visualization</dd>
 </div>
 <div>
 <dt>Research interests</dt>
-<dd>Planetary spectroscopy, asteroid surface composition, small bodies, remote sensing, scientific machine learning</dd>
+<dd>Planetary surface composition, infrared and X-ray remote sensing, scientific machine learning, space-resource exploration</dd>
+</div>
+<div>
+<dt>Languages</dt>
+<dd>Korean, Japanese, and English — fluent</dd>
 </div>
 <div>
 <dt>Research tools</dt>
@@ -141,7 +164,7 @@
 <div class="section-label">06 / CV &amp; contact</div>
 <div class="section-body">
 <h2 id="contact-title">Curriculum vitae &amp; correspondence</h2>
-<p>I welcome conversations about doctoral research in planetary spectroscopy, small-body composition, and scientific machine learning.</p>
+<p>I welcome conversations about Ph.D. opportunities in planetary remote sensing, compositional analysis, and scientific machine learning, with a long-term interest in space-resource exploration.</p>
 <div class="contact-links"><a href="assets/inho-yoo-cv.pdf">Download curriculum vitae (PDF)</a><a href="mailto:yoo.inho@kwansei.ac.jp">yoo.inho@kwansei.ac.jp</a><a href="mailto:inhowtin@gmail.com">inhowtin@gmail.com</a>
 </div>
 </div>
