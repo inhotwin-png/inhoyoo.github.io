@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Inho Yoo, Physics and Astronomy undergraduate at Kwansei Gakuin University. Planetary remote sensing, planned lunar composition research, and scientific machine learning for future space-resource exploration.">
+  <meta name="description" content="Inho Yoo, Physics and Astronomy undergraduate at Kwansei Gakuin University. Planetary remote sensing, ongoing lunar surface composition research, and scientific machine learning for future space-resource exploration.">
   <title>Inho Yoo | Planetary Science &amp; Spectroscopy</title>
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -20,7 +20,7 @@
       <h1 id="name">Inho Yoo</h1>
       <p class="identity">Planetary spectroscopy &amp;<br>scientific machine learning</p>
       <p class="intro">I am a Physics and Astronomy undergraduate at Kwansei Gakuin University interested in planetary composition, remote sensing, and scientific machine learning. My long-term goal is to develop computational tools that combine infrared and X-ray observations to identify promising targets for future space-resource exploration.</p>
-      <p class="intro">I am preparing to apply for Fall 2027 Ph.D. admission in the United States.</p>
+      <p class="intro">My ongoing senior thesis focuses on <a href="#next">Lunar Surface Composition Inference</a>. I am preparing to apply for Fall 2027 Ph.D. admission in the United States.</p>
       <div class="links"><a href="#research">Research</a><a href="assets/inho-yoo-cv.pdf">Curriculum vitae (PDF)</a><a href="mailto:yoo.inho@kwansei.ac.jp">Email</a>
 </div>
     </div>
@@ -69,13 +69,21 @@
 </div>
   </section>
   <section id="next" class="section" aria-labelledby="next-title">
-    <div class="section-label">03 / Next research step</div>
+    <div class="section-label">03 / Current senior thesis</div>
     <div class="section-body">
-<p class="status">Planned work</p>
-<h2 id="next-title">Planned senior thesis — Lunar remote sensing</h2>
-<p class="lead">Exploring complementary observations of lunar surface composition.</p>
-<p>For my planned senior thesis, I aim to investigate lunar surface composition using infrared and X-ray remote-sensing data. I am interested in exploring how these complementary observations, together with laboratory measurements of lunar samples, could inform computational and machine-learning approaches to compositional inference.</p>
-<p>This project has not yet begun. The initial stage will focus on reviewing suitable datasets, their spatial correspondence, and the feasibility of combining them.</p>
+<p class="status">Ongoing research</p>
+<h2 id="next-title">Lunar Surface Composition Inference</h2>
+<p>I use Kaguya MI’s lunar surface visible and near-infrared reflectance data and chemical analysis results from lunar samples collected during Apollo and Chinese Chang’e-5/6 missions.</p>
+<h3>Models and validation</h3>
+<p>I trained ridge regression and convolutional neural networks (CNNs) to predict FeO and TiO₂ abundances, and conducted regression experiments for six major lunar oxides: SiO₂, Al₂O₃, FeO, MgO, CaO, and TiO₂.</p>
+<p>I applied leave-one-landing-site-out (LOLO) validation by excluding data from one landing site during training and then predicting the composition of that site.</p>
+<h3>Results and limitations</h3>
+<p>I found promising results for FeO and Al₂O₃ compared with a baseline that predicts the mean abundance. I did not find the same level of improvement for MgO, and performance varied by landing site.</p>
+<p>I identified spatial correspondence between sample collection locations and orbital observation areas as a key limitation when using sample chemistry as ground-truth values.</p>
+<h3>Further investigation</h3>
+<p>I investigated laboratory spectra and chemical analysis data from terrestrial samples. Reliable matching of spectra and composition values from the same samples still needs validation.</p>
+<p>I analyzed Chandrayaan-2 CLASS and XSM observations and worked on linking them with Kaguya MI data. I have not yet verified whether adding X-ray data improves composition prediction performance.</p>
+<p class="method">Python · Spectral-data analysis · Ridge regression · CNNs · LOLO validation</p>
 </div>
   </section>
   <section id="oasis" class="section" aria-labelledby="oasis-title">
@@ -87,7 +95,7 @@
 <p>My long-term motivation is to support space-resource exploration by developing methods that assess composition and its uncertainty, helping prioritize promising targets for further investigation.</p>
 <p>I propose a multimodal scientific machine-learning framework to study planetary surface composition using heterogeneous infrared and X-ray observations. The central question is whether complementary measurements can support compositional inference when one sensing modality is noisy or unavailable.</p>
 <p>A proposed Moon → Bennu → Ryugu progression would explore complementary, noisy, and missing observations, with comparisons to returned-sample measurements where appropriate. Data availability, spatial correspondence, and transfer between planetary bodies would need to be established before validation.</p>
-<p class="note">The diagrams and AI-generated concept illustrations below outline proposed studies. Labels such as “robustness verified” and “PoC completed” in the original illustrations describe intended outcomes, not completed results. No trained model, validated composition map, or completed proof of concept is presented.</p>
+<p class="note">The diagrams and AI-generated concept illustrations below outline proposed studies. Labels such as “robustness verified” and “PoC completed” in the original illustrations describe intended outcomes, not completed results. These proposed OASIS studies do not present a validated multimodal composition map or a completed proof of concept. My ongoing lunar thesis is described <a href="#next">above</a>.</p>
       <article class="phase">
 <p class="phase-number">OASIS / Phase 1 · Proposed</p>
 <h3>Moon — Establish a baseline</h3>
@@ -153,7 +161,7 @@
 <h2 id="background-title">Academic background</h2>
 <h3>Kwansei Gakuin University</h3>
 <p>B.S. in Physics and Astronomy · Expected March 2027<br>Hyogo, Japan<br>Advisor and senior thesis supervisor: Prof. Shuji Matsuura</p>
-<p>Relevant coursework: Astrophysics, Infrared Astronomy, X-ray Astronomy, and Computational Physics.</p>
+<p>Relevant coursework: Astrophysics, Infrared Astronomy, X-ray Astronomy, and Computer Science.</p>
 <dl>
 <div>
 <dt>Programming</dt>
@@ -165,7 +173,7 @@
 </div>
 <div>
 <dt>Data analysis</dt>
-<dd>FITS catalog handling, memory-mapped data access, random sampling, coordinate visualization</dd>
+<dd>FITS catalog handling, memory-mapped data access, random sampling, coordinate visualization, spectral-data analysis, ridge regression, CNNs, LOLO validation</dd>
 </div>
 <div>
 <dt>Research interests</dt>
@@ -173,7 +181,7 @@
 </div>
 <div>
 <dt>Languages</dt>
-<dd>Korean, Japanese, and English — fluent</dd>
+<dd>Korean, Japanese, and English</dd>
 </div>
 <div>
 <dt>Research tools</dt>
