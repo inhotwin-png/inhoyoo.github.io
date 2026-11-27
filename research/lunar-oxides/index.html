@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Inho Yoo’s unsubmitted senior thesis draft on mapping six lunar oxides with Lunar AutoLab. Results include landing-site validation, the contribution of X-ray observations, and regions for follow-up.">
+  <title>Mapping Six Major Oxides on the Moon | Inho Yoo</title>
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header wrap">
+    <a class="wordmark" href="../../">Inho Yoo</a>
+    <nav aria-label="Main navigation"><a href="../../#research">Research</a><a href="../../#oasis">Proposal</a><a href="../../#background">Background</a><a href="../../#contact">Contact</a></nav>
+  </header>
+  <main id="main" class="wrap study-page">
+    <header class="study-heading">
+      <p class="eyebrow">Senior thesis · Matsuura Laboratory</p>
+      <h1>Automated Model Selection and Mapping of Six Major Oxide Abundances on the Lunar Surface</h1>
+      <p class="byline">Inho Yoo · Department of Physics and Astronomy, Kwansei Gakuin University</p>
+      <p class="draft-note"><strong>Manuscript status</strong> These results are from my 26 November 2026 draft. I am continuing to revise the manuscript and have not submitted it for publication.</p>
+      <p class="lead">How well can orbital spectra predict lunar soil chemistry at a landing site the model has never seen? I built Lunar AutoLab to test that question for six oxides and used the selected models to identify places for follow-up observations.</p>
+      <nav class="study-nav" aria-label="On this page"><a href="#methods">Models and samples</a><a href="#validation">Validation</a><a href="#class">X-ray inputs</a><a href="#maps">Maps and candidates</a><a href="#materials">Code and data</a></nav>
+    </header>
+
+    <section id="methods" class="section" aria-labelledby="methods-title">
+      <div class="section-label">Models and samples</div>
+      <div class="section-body">
+        <h2 id="methods-title">Connecting returned soil to orbital measurements</h2>
+        <p>I matched 28 returned-sample records from six Apollo and two Chang’e landing sites to 26 distinct observation windows. Two pairs of Apollo samples shared a window. SiO₂ had a valid laboratory reference in 25 windows, and each other oxide had 26.</p>
+        <p>Kaguya’s Multiband Imager (MI) provided visible and near-infrared reflectance. For four mapping models, I added X-ray emission-line intensity ratios from Chandrayaan-2’s CLASS instrument. The SiO₂ and FeO mapping models used MI alone.</p>
+        <p>Lunar AutoLab compared model configurations for each oxide. I selected one model to minimize abundance error and a second to compare pairs of regions. The first set produced the CCD80 composition maps.</p>
+        <p class="figure-source"><a href="../../assets/lunar-oxides/workflow.webp">View the model-selection workflow (draft Fig. 1)</a></p>
+      </div>
+    </section>
+
+    <section id="validation" class="section" aria-labelledby="validation-title">
+      <div class="section-label">Validation</div>
+      <div class="section-body">
+        <h2 id="validation-title">Testing at held-out landing sites</h2>
+        <p>In leave-one-landing-site-out (LOLO) cross-validation, I trained on seven sites and predicted the eighth. I pooled errors across the held-out windows, giving each valid window equal weight. I then compared the selected mapping models with mean returned-soil compositions at Luna 16, 20, and 24. These three sites were outside model training and selection.</p>
+        <div class="table-wrap">
+          <table class="study-table" id="validation-table">
+            <caption>Mean absolute error by oxide, in weight percentage points (wt%p). Draft Table 6a.</caption>
+            <thead><tr><th scope="col">Oxide</th><th scope="col">LOLO<br><small>8 sites</small></th><th scope="col">Luna<br><small>3 sites</small></th></tr></thead>
+            <tbody>
+              <tr><th scope="row">SiO₂</th><td>0.802</td><td>2.080</td></tr>
+              <tr><th scope="row">Al₂O₃</th><td>0.866</td><td>1.133</td></tr>
+              <tr><th scope="row">FeO</th><td>0.555</td><td>1.790</td></tr>
+              <tr><th scope="row">MgO</th><td>0.755</td><td>1.004</td></tr>
+              <tr><th scope="row">CaO</th><td>0.374</td><td>0.982</td></tr>
+              <tr><th scope="row">TiO₂</th><td>0.546</td><td>1.677</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Errors were higher at the Luna sites for all six oxides. At Luna 24, for example, the TiO₂ prediction was 5.430 wt% and the returned-soil mean was 1.300 wt%. Each Luna reference is a site mean, while LOLO uses sample-based references for individual windows.</p>
+        <details class="figure-disclosure">
+          <summary>View predictions for individual windows (draft Fig. 2)</summary>
+          <figure>
+            <a href="../../assets/lunar-oxides/validation.webp"><img src="../../assets/lunar-oxides/validation.webp" width="1598" height="1238" loading="lazy" alt="Six scatterplots of held-out predictions against sample-based reference abundances, with observations colored by landing site."></a>
+            <figcaption>Each point represents an observation window. The dashed line marks agreement with the sample reference. <a href="../../assets/lunar-oxides/validation.webp">Open full-size figure</a>.</figcaption>
+          </figure>
+        </details>
+        <h3>Ranking two windows</h3>
+        <p>The separate ranking models correctly ordered <strong>83.69–95.08%</strong> of the evaluated pairs with different reference abundances (draft Table 6). For pairs from different sites I held out both sites, and for pairs from one site I held out that site. I used these models for supplementary comparisons between regions.</p>
+      </div>
+    </section>
+
+    <section id="class" class="section" aria-labelledby="class-title">
+      <div class="section-label">X-ray inputs</div>
+      <div class="section-body">
+        <h2 id="class-title">What did CLASS add?</h2>
+        <p>I refitted the four mapping models that used CLASS, keeping the same MI inputs, training windows, model settings, and random seeds. Adding the X-ray line ratios reduced pooled LOLO error for each oxide. The improvement varied by landing site.</p>
+        <div class="table-wrap">
+          <table class="study-table" id="class-table">
+            <caption>Matched LOLO fits. Errors are mean absolute errors in wt%p. Draft Table 6b.</caption>
+            <thead><tr><th scope="col">Oxide</th><th scope="col">MI alone</th><th scope="col">MI + CLASS</th><th scope="col">Sites with lower error</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Al₂O₃</th><td>1.901</td><td>0.866</td><td>8 / 8</td></tr>
+              <tr><th scope="row">MgO</th><td>1.168</td><td>0.755</td><td>4 / 8</td></tr>
+              <tr><th scope="row">CaO</th><td>1.085</td><td>0.374</td><td>7 / 8</td></tr>
+              <tr><th scope="row">TiO₂</th><td>1.158</td><td>0.546</td><td>6 / 8</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>For CaO, the error fell from <strong>1.085 to 0.374 wt%p</strong>. A curved band in the predicted CaO map follows a band in the CLASS Ca Kα/Si ratio map. This correspondence suggests that the input contributed a visible pattern to the output.</p>
+        <div class="figure-pair">
+          <figure>
+            <a href="../../assets/lunar-oxides/class-calcium.webp"><img src="../../assets/lunar-oxides/class-calcium.webp" width="448" height="344" loading="lazy" alt="CLASS calcium-to-silicon X-ray line intensity ratio with a curved band near the poles."></a>
+            <figcaption><strong>CLASS input.</strong> Ca Kα/Si line intensity ratio from the 296 s data product. Draft Fig. 7a. <a href="../../assets/lunar-oxides/class-calcium.webp">Enlarge</a>.</figcaption>
+          </figure>
+          <figure>
+            <a href="../../assets/lunar-oxides/cao-pattern.webp"><img src="../../assets/lunar-oxides/cao-pattern.webp" width="451" height="344" loading="lazy" alt="Predicted CaO abundance with a curved band in a similar location on the same global projection."></a>
+            <figcaption><strong>Predicted CaO.</strong> Abundance in wt% on the same projection. Draft Fig. 7b. <a href="../../assets/lunar-oxides/cao-pattern.webp">Enlarge</a>.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="maps" class="section" aria-labelledby="maps-title">
+      <div class="section-label">Maps and candidates</div>
+      <div class="section-body">
+        <h2 id="maps-title">From wide-area screening to a 2 km neighborhood</h2>
+        <p>I screened the surface at nominal <strong>496 m</strong> spacing, refined shortlisted areas at <strong>124 m</strong>, and made <strong>62 m</strong> predictions within 2 km of selected centers. The global maps below average valid wide-area predictions within <strong>0.5° × 0.5° display cells</strong>.</p>
+        <fieldset class="oxide-gallery">
+          <legend>Explore the predicted oxides <span>(draft Fig. 3)</span></legend>
+          <input class="oxide-choice" type="radio" name="oxide" id="map-sio2" value="sio2"><label for="map-sio2">SiO₂</label>
+          <input class="oxide-choice" type="radio" name="oxide" id="map-al2o3" value="al2o3"><label for="map-al2o3">Al₂O₃</label>
+          <input class="oxide-choice" type="radio" name="oxide" id="map-feo" value="feo" checked><label for="map-feo">FeO</label>
+          <input class="oxide-choice" type="radio" name="oxide" id="map-mgo" value="mgo"><label for="map-mgo">MgO</label>
+          <input class="oxide-choice" type="radio" name="oxide" id="map-cao" value="cao"><label for="map-cao">CaO</label>
+          <input class="oxide-choice" type="radio" name="oxide" id="map-tio2" value="tio2"><label for="map-tio2">TiO₂</label>
+          <div class="map-views">
+            <figure class="oxide-view view-sio2">
+              <a href="../../assets/lunar-oxides/sio2-global.webp" aria-label="Enlarge the silicon dioxide map"><img src="../../assets/lunar-oxides/sio2-global.webp" width="780" height="449" loading="lazy" alt="Global map of predicted SiO₂ in weight percent. Predicted SiO₂ is relatively low in Oceanus Procellarum and Mare Imbrium, and higher in Mare Frigoris."></a>
+              <figcaption><strong>Silicon dioxide (SiO₂).</strong> Predicted SiO₂ is relatively low in Oceanus Procellarum and Mare Imbrium, and higher in Mare Frigoris. <a href="../../assets/lunar-oxides/sio2-global.webp">Open full-size map</a>.</figcaption>
+            </figure>
+            <figure class="oxide-view view-al2o3">
+              <a href="../../assets/lunar-oxides/al2o3-global.webp" aria-label="Enlarge the aluminum oxide map"><img src="../../assets/lunar-oxides/al2o3-global.webp" width="780" height="449" loading="lazy" alt="Global map of predicted Al₂O₃ in weight percent. Predicted Al₂O₃ is lower in the major near-side maria than in the surrounding highlands."></a>
+              <figcaption><strong>Aluminum oxide (Al₂O₃).</strong> Predicted Al₂O₃ is lower in the major near-side maria than in the surrounding highlands. <a href="../../assets/lunar-oxides/al2o3-global.webp">Open full-size map</a>.</figcaption>
+            </figure>
+            <figure class="oxide-view view-feo">
+              <a href="../../assets/lunar-oxides/feo-global.webp" aria-label="Enlarge the iron oxide map"><img src="../../assets/lunar-oxides/feo-global.webp" width="780" height="449" loading="lazy" alt="Global map of predicted FeO in weight percent. Oceanus Procellarum and Mare Imbrium have higher predicted FeO than the surrounding highlands."></a>
+              <figcaption><strong>Iron oxide (FeO).</strong> Oceanus Procellarum and Mare Imbrium have higher predicted FeO than the surrounding highlands. <a href="../../assets/lunar-oxides/feo-global.webp">Open full-size map</a>.</figcaption>
+            </figure>
+            <figure class="oxide-view view-mgo">
+              <a href="../../assets/lunar-oxides/mgo-global.webp" aria-label="Enlarge the magnesium oxide map"><img src="../../assets/lunar-oxides/mgo-global.webp" width="780" height="449" loading="lazy" alt="Global map of predicted MgO in weight percent. Predicted MgO is relatively high in the major near-side maria."></a>
+              <figcaption><strong>Magnesium oxide (MgO).</strong> Predicted MgO is relatively high in the major near-side maria. <a href="../../assets/lunar-oxides/mgo-global.webp">Open full-size map</a>.</figcaption>
+            </figure>
+            <figure class="oxide-view view-cao">
+              <a href="../../assets/lunar-oxides/cao-global.webp" aria-label="Enlarge the calcium oxide map"><img src="../../assets/lunar-oxides/cao-global.webp" width="780" height="449" loading="lazy" alt="Global map of predicted CaO in weight percent. Predicted CaO is relatively low in the major near-side maria. A curved band also appears in the CLASS input."></a>
+              <figcaption><strong>Calcium oxide (CaO).</strong> Predicted CaO is relatively low in the major near-side maria. A curved band also appears in the CLASS input. <a href="../../assets/lunar-oxides/cao-global.webp">Open full-size map</a>.</figcaption>
+            </figure>
+            <figure class="oxide-view view-tio2">
+              <a href="../../assets/lunar-oxides/tio2-global.webp" aria-label="Enlarge the titanium dioxide map"><img src="../../assets/lunar-oxides/tio2-global.webp" width="780" height="449" loading="lazy" alt="Global map of predicted TiO₂ in weight percent. High predicted TiO₂ is concentrated in a few maria, including Mare Tranquillitatis and Mare Crisium."></a>
+              <figcaption><strong>Titanium dioxide (TiO₂).</strong> High predicted TiO₂ is concentrated in a few maria, including Mare Tranquillitatis and Mare Crisium. <a href="../../assets/lunar-oxides/tio2-global.webp">Open full-size map</a>.</figcaption>
+            </figure>
+          </div>
+        </fieldset>
+        <p class="map-key"><span class="missing-key" aria-hidden="true"></span>Gray marks cells with no valid prediction. Each oxide has its own color scale in wt%. Axes show latitude (°N) and longitude (°E).</p>
+        <h3>How candidates were prioritized</h3>
+        <p>I scored each region on predicted abundance (40 points), connected high-abundance area (30), valid coverage (15), and spatial stability (15). The final lists contain 20 candidates per oxide. The 120 entries occupy <strong>112 distinct centers</strong>, with eight centers shared by Al₂O₃ and CaO.</p>
+        <p class="figure-source"><a href="../../assets/lunar-oxides/candidate-locations.webp">View all candidate locations (draft Fig. 5)</a></p>
+        <div class="candidate-example">
+          <figure>
+            <a href="../../assets/lunar-oxides/feo-candidate.webp"><img src="../../assets/lunar-oxides/feo-candidate.webp" width="625" height="516" loading="lazy" alt="Local FeO predictions inside a 2 km radius. The highest values appear along the northern edge of the area."></a>
+            <figcaption>Top-ranked FeO region at 23.467°N, 52.594°W. Nominal 62 m grid. Draft Fig. 6c. <a href="../../assets/lunar-oxides/feo-candidate.webp">Enlarge</a>.</figcaption>
+          </figure>
+          <div>
+            <h3>Reading a high FeO prediction</h3>
+            <p>The area-weighted trimmed mean was <strong>25.974 wt% FeO</strong> within this circle. The six independently predicted abundances summed to more than 100 wt% in all 3,571 cells with complete estimates (draft Tables 7 and 7a).</p>
+            <p>Across the global map, the sum of the six oxide means exceeded 100 wt% over <strong>12.908% of the valid display area</strong>. These checks inform how I prioritize new measurements.</p>
+          </div>
+        </div>
+        <p>A soil sample represents a small part of a 62 m × 62 m window. Verifying the mean composition across a window would require independent measurements at several locations inside it.</p>
+        <p class="figure-source"><a href="../../assets/lunar-oxides/six-oxide-total.webp">View the global six-oxide sum (draft Fig. 4)</a></p>
+      </div>
+    </section>
+
+    <section id="materials" class="section" aria-labelledby="materials-title">
+      <div class="section-label">Code and data</div>
+      <div class="section-body">
+        <h2 id="materials-title">Reproduce the CCD80 results</h2>
+        <ul class="resource-list">
+          <li><a href="https://github.com/inhotwin-png/ccd80-thesis-reproduction/releases/tag/v1.0.0">Code and data · v1.0.0</a><span>Sample-to-window assignments, model settings, held-out predictions, and scripts for the maps and candidate rankings.</span></li>
+          <li><a href="https://doi.org/10.5281/zenodo.24537736">Archived software release · Zenodo</a><span>Versioned reproduction package. Software DOI 10.5281/zenodo.24537736.</span></li>
+          <li><a href="https://github.com/inhotwin-png/ccd80-thesis-reproduction/releases/tag/supplement-s1-20261126">Supplementary File S1</a><span>Luna comparisons, matched CLASS fits, and checks on the six-oxide sums.</span></li>
+        </ul>
+        <p class="note">Figure numbers on this page follow the November draft. In release v1.0.0, the global maps are Figure 2 and the LOLO plots are Figure 4.</p>
+        <p class="figure-source">Orbital data sources · <a href="https://darts.isas.jaxa.jp/datasets/sln-l-mi-5-map-v3.0">Kaguya MI MAP V3 (JAXA/ISAS DARTS)</a> · <a href="https://github.com/ravioli1369/selenomapper/tree/7aa89781c3a4b4121e2f6363b27455ed7056cc16/maps/296s">Chandrayaan-2 CLASS line ratios (Kumar et al.)</a></p>
+      </div>
+    </section>
+  </main>
+  <footer class="footer wrap"><p>Inho Yoo · Kwansei Gakuin University</p><a href="../../#research">Back to research</a></footer>
+</body>
+</html>
