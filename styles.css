@@ -493,9 +493,12 @@ dd {
 .study-page figure > a, .featured-map > a { display: block; }
 summary:focus-visible { outline: 2px solid var(--brown); outline-offset: 3px; }
 .figure-pair, .candidate-example { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; align-items: start; margin: 24px 0; }
-.figure-pair figure, .candidate-example figure { margin: 0; }
+.figure-pair figure { margin: 0; }
 .candidate-example { grid-template-columns: minmax(0, 0.95fr) minmax(0, 1fr); }
-.candidate-example h3 { margin-top: 0; }
+.candidate-gallery.oxide-gallery { max-width: none; }
+.candidate-example figcaption { margin: 0; color: var(--ink); font-size: inherit; }
+.candidate-example h3 { margin: 0 0 4px; }
+.candidate-location { color: var(--muted); font-size: 18px; }
 .candidate-example p { line-height: 1.48; }
 .oxide-gallery { min-inline-size: 0; max-width: 780px; margin: 24px 0 10px; padding: 0; border: none; }
 .oxide-gallery legend { padding: 0; margin-bottom: 10px; font-size: 21px; font-weight: bold; color: var(--brown); }
@@ -515,13 +518,13 @@ summary:focus-visible { outline: 2px solid var(--brown); outline-offset: 3px; }
 }
 .oxide-choice:checked + label { color: white; background: var(--brown); border-color: var(--brown); }
 .oxide-choice:focus-visible + label { outline: 2px solid var(--brown); outline-offset: 3px; }
-.map-views figure { display: none; margin: 8px 0 0; }
-#map-sio2:checked ~ .map-views .view-sio2,
-#map-al2o3:checked ~ .map-views .view-al2o3,
-#map-feo:checked ~ .map-views .view-feo,
-#map-mgo:checked ~ .map-views .view-mgo,
-#map-cao:checked ~ .map-views .view-cao,
-#map-tio2:checked ~ .map-views .view-tio2 { display: block; }
+.map-views > .oxide-view { margin: 8px 0 0; }
+.oxide-choice[value="sio2"]:not(:checked) ~ .map-views > .view-sio2,
+.oxide-choice[value="al2o3"]:not(:checked) ~ .map-views > .view-al2o3,
+.oxide-choice[value="feo"]:not(:checked) ~ .map-views > .view-feo,
+.oxide-choice[value="mgo"]:not(:checked) ~ .map-views > .view-mgo,
+.oxide-choice[value="cao"]:not(:checked) ~ .map-views > .view-cao,
+.oxide-choice[value="tio2"]:not(:checked) ~ .map-views > .view-tio2 { display: none; }
 .map-key { color: var(--muted); font-size: 17px; line-height: 1.45; }
 .missing-key { display: inline-block; width: 0.8em; height: 0.8em; margin-right: 0.2em; background: #cecece; border: 1px solid #999; }
 .resource-list { list-style: none; margin: 0 0 22px; padding: 0; max-width: 760px; }

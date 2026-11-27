@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Inho Yoo’s unsubmitted senior thesis draft on mapping six lunar oxides with Lunar AutoLab. Results include landing-site validation, the contribution of X-ray observations, and regions for follow-up.">
   <title>Mapping Six Major Oxides on the Moon | Inho Yoo</title>
-  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../styles.css?v=13a8911ab7">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -141,17 +141,79 @@
         <h3>How candidates were prioritized</h3>
         <p>I scored each region on predicted abundance (40 points), connected high-abundance area (30), valid coverage (15), and spatial stability (15). The final lists contain 20 candidates per oxide. The 120 entries occupy <strong>112 distinct centers</strong>, with eight centers shared by Al₂O₃ and CaO.</p>
         <p class="figure-source"><a href="../../assets/lunar-oxides/candidate-locations.webp">View all candidate locations (draft Fig. 5)</a></p>
-        <div class="candidate-example">
-          <figure>
-            <a href="../../assets/lunar-oxides/feo-candidate.webp"><img src="../../assets/lunar-oxides/feo-candidate.webp" width="625" height="516" loading="lazy" alt="Local FeO predictions inside a 2 km radius. The highest values appear along the northern edge of the area."></a>
-            <figcaption>Top-ranked FeO region at 23.467°N, 52.594°W. Nominal 62 m grid. Draft Fig. 6c. <a href="../../assets/lunar-oxides/feo-candidate.webp">Enlarge</a>.</figcaption>
-          </figure>
-          <div>
-            <h3>Reading a high FeO prediction</h3>
-            <p>The area-weighted trimmed mean was <strong>25.974 wt% FeO</strong> within this circle. The six independently predicted abundances summed to more than 100 wt% in all 3,571 cells with complete estimates (draft Tables 7 and 7a).</p>
-            <p>Across the global map, the sum of the six oxide means exceeded 100 wt% over <strong>12.908% of the valid display area</strong>. These checks inform how I prioritize new measurements.</p>
+        <fieldset class="oxide-gallery candidate-gallery" id="candidate-maps">
+          <legend>Explore the first-ranked candidate for each oxide <span>(draft Fig. 6)</span></legend>
+          <input class="oxide-choice" type="radio" name="candidate-oxide" id="candidate-sio2" value="sio2" aria-controls="candidate-panel-sio2"><label for="candidate-sio2">SiO₂</label>
+          <input class="oxide-choice" type="radio" name="candidate-oxide" id="candidate-al2o3" value="al2o3" aria-controls="candidate-panel-al2o3"><label for="candidate-al2o3">Al₂O₃</label>
+          <input class="oxide-choice" type="radio" name="candidate-oxide" id="candidate-feo" value="feo" aria-controls="candidate-panel-feo" checked><label for="candidate-feo">FeO</label>
+          <input class="oxide-choice" type="radio" name="candidate-oxide" id="candidate-mgo" value="mgo" aria-controls="candidate-panel-mgo"><label for="candidate-mgo">MgO</label>
+          <input class="oxide-choice" type="radio" name="candidate-oxide" id="candidate-cao" value="cao" aria-controls="candidate-panel-cao"><label for="candidate-cao">CaO</label>
+          <input class="oxide-choice" type="radio" name="candidate-oxide" id="candidate-tio2" value="tio2" aria-controls="candidate-panel-tio2"><label for="candidate-tio2">TiO₂</label>
+          <div class="map-views">
+            <figure class="oxide-view view-sio2 candidate-example" id="candidate-panel-sio2">
+              <a href="../../assets/lunar-oxides/sio2-candidate.webp" aria-label="Enlarge the SiO₂ candidate map"><img src="../../assets/lunar-oxides/sio2-candidate.webp" width="625" height="516" loading="lazy" alt="Predicted SiO₂ is higher from the center toward the south and lower along the northern edge."></a>
+              <figcaption>
+                <h3>Silicon dioxide (SiO₂)</h3>
+                <p class="candidate-location">56.617°S, 118.958°E · Draft Fig. 6a</p>
+                <p>The area-weighted trimmed mean was <strong>53.078 wt% SiO₂</strong>. Higher predicted SiO₂ extends southward from the center.</p>
+                <p>The six-oxide total exceeded 100 wt% across 20.216% of the valid area.</p>
+                <a href="../../assets/lunar-oxides/sio2-candidate.webp">Open full-size map</a>
+              </figcaption>
+            </figure>
+            <figure class="oxide-view view-al2o3 candidate-example" id="candidate-panel-al2o3">
+              <a href="../../assets/lunar-oxides/al2o3-candidate.webp" aria-label="Enlarge the Al₂O₃ candidate map"><img src="../../assets/lunar-oxides/al2o3-candidate.webp" width="625" height="516" loading="lazy" alt="Al₂O₃ map with scattered high values near the northern edge of the assessment circle."></a>
+              <figcaption>
+                <h3>Aluminum oxide (Al₂O₃)</h3>
+                <p class="candidate-location">12.082°N, 168.144°E · Draft Fig. 6b</p>
+                <p>The area-weighted trimmed mean was <strong>38.707 wt% Al₂O₃</strong>. This is also the first-ranked CaO site.</p>
+                <p>The six-oxide total exceeded 100 wt% across 99.612% of the valid area at this shared site.</p>
+                <a href="../../assets/lunar-oxides/al2o3-candidate.webp">Open full-size map</a>
+              </figcaption>
+            </figure>
+            <figure class="oxide-view view-feo candidate-example" id="candidate-panel-feo">
+              <a href="../../assets/lunar-oxides/feo-candidate.webp" aria-label="Enlarge the FeO candidate map"><img src="../../assets/lunar-oxides/feo-candidate.webp" width="625" height="516" loading="lazy" alt="The highest predicted FeO values lie along the northern edge of the circle."></a>
+              <figcaption>
+                <h3>Iron oxide (FeO)</h3>
+                <p class="candidate-location">23.467°N, 52.594°W · Draft Fig. 6c</p>
+                <p>The area-weighted trimmed mean was <strong>25.974 wt% FeO</strong>. The highest FeO predictions lie along the northern edge.</p>
+                <p>The six independently predicted abundances summed to more than 100 wt% in all 3,571 cells with complete estimates.</p>
+                <a href="../../assets/lunar-oxides/feo-candidate.webp">Open full-size map</a>
+              </figcaption>
+            </figure>
+            <figure class="oxide-view view-mgo candidate-example" id="candidate-panel-mgo">
+              <a href="../../assets/lunar-oxides/mgo-candidate.webp" aria-label="Enlarge the MgO candidate map"><img src="../../assets/lunar-oxides/mgo-candidate.webp" width="625" height="516" loading="lazy" alt="Patches of higher predicted MgO occur along the northern rim and near the center."></a>
+              <figcaption>
+                <h3>Magnesium oxide (MgO)</h3>
+                <p class="candidate-location">42.310°N, 14.564°W · Draft Fig. 6d</p>
+                <p>The area-weighted trimmed mean was <strong>13.544 wt% MgO</strong>.</p>
+                <p>A six-oxide total was unavailable here because the CaO map had no valid predictions in this region.</p>
+                <a href="../../assets/lunar-oxides/mgo-candidate.webp">Open full-size map</a>
+              </figcaption>
+            </figure>
+            <figure class="oxide-view view-cao candidate-example" id="candidate-panel-cao">
+              <a href="../../assets/lunar-oxides/cao-candidate.webp" aria-label="Enlarge the CaO candidate map"><img src="../../assets/lunar-oxides/cao-candidate.webp" width="625" height="516" loading="lazy" alt="CaO map with scattered high values near the northern edge of the assessment circle."></a>
+              <figcaption>
+                <h3>Calcium oxide (CaO)</h3>
+                <p class="candidate-location">12.082°N, 168.144°E · Draft Fig. 6e</p>
+                <p>The area-weighted trimmed mean was <strong>19.901 wt% CaO</strong>. This is also the first-ranked Al₂O₃ site.</p>
+                <p>The six-oxide total exceeded 100 wt% across 99.612% of the valid area at this shared site.</p>
+                <a href="../../assets/lunar-oxides/cao-candidate.webp">Open full-size map</a>
+              </figcaption>
+            </figure>
+            <figure class="oxide-view view-tio2 candidate-example" id="candidate-panel-tio2">
+              <a href="../../assets/lunar-oxides/tio2-candidate.webp" aria-label="Enlarge the TiO₂ candidate map"><img src="../../assets/lunar-oxides/tio2-candidate.webp" width="625" height="516" loading="lazy" alt="Linear features cross the predicted TiO₂ abundance map."></a>
+              <figcaption>
+                <h3>Titanium dioxide (TiO₂)</h3>
+                <p class="candidate-location">67.565°N, 149.608°W · Draft Fig. 6f</p>
+                <p>The area-weighted trimmed mean was <strong>18.494 wt% TiO₂</strong>. Linear features are visible in the TiO₂ predictions.</p>
+                <p>A six-oxide total was unavailable here because the SiO₂ map had no valid predictions in this region.</p>
+                <a href="../../assets/lunar-oxides/tio2-candidate.webp">Open full-size map</a>
+              </figcaption>
+            </figure>
           </div>
-        </div>
+        </fieldset>
+        <p class="map-key"><span class="missing-key" aria-hidden="true"></span>Gray cells have no valid prediction. The dashed circle marks a 2 km radius on the nominal 62 m grid. Each panel has its own color scale in wt%. Regional statistics are from draft Tables 7 and 7a.</p>
+        <p>Across the global map, the sum of the six oxide means exceeded 100 wt% over <strong>12.908% of the valid display area</strong>. These checks inform how I prioritize new measurements.</p>
         <p>A soil sample represents a small part of a 62 m × 62 m window. Verifying the mean composition across a window would require independent measurements at several locations inside it.</p>
         <p class="figure-source"><a href="../../assets/lunar-oxides/six-oxide-total.webp">View the global six-oxide sum (draft Fig. 4)</a></p>
       </div>
